@@ -271,6 +271,15 @@ like frfr blood that you’d see if you got a cut on your arm
 my ass hurts still
 i should prob see a doctor`.split("\n")
 
+collected = localStorage.getItem("collected") != undefined ? localStorage.getItem("collected").split("/").map(x => parseInt(x)) : []
+
 index = Math.floor(Math.random()*lines.length)
-document.getElementById("num").innerText = `${index}/${lines.length}`
+document.getElementById("num").innerText = `#${index}`
 document.getElementById("line").innerText = lines[index]
+collected.push(index)
+getNum = {}
+for (col of collected) {
+    getNum[col] = 0
+}
+document.getElementById("collected").innerText = `${Object.keys(getNum).length} collected out of ${lines.length}`
+localStorage.setItem("collected", collected.join("/"))
