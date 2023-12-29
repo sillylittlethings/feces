@@ -269,12 +269,15 @@ and i wiped and i saw blood
 like not menstrual blood
 like frfr blood that you’d see if you got a cut on your arm
 my ass hurts still
-i should prob see a doctor`.split("\n")
+i should prob see a doctor
+my ass hurts so bad
+i took a shit
+just had diarrhea`.split("\n")
 
 collected = localStorage.getItem("collected") != undefined ? localStorage.getItem("collected").split("/").map(x => parseInt(x)) : []
 
 index = Math.floor(Math.random()*lines.length)
-document.getElementById("num").innerText = `#${index}`
+document.getElementById("num").innerText = `#${index+1}`
 document.getElementById("line").innerText = lines[index]
 collected.push(index)
 getNum = {}
